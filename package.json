@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/crazyD97/node-authentication-system/issues"
   },
-  "homepage": "https://github.com/crazyD97/node-authentication-system#readme"
+  "homepage": "https://github.com/crazyD97/node-authentication-system#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
