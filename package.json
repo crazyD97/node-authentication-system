@@ -1,0 +1,19 @@
+{
+  "name": "auth-sys",
+  "version": "1.0.0",
+  "description": "a authentication system with node and passport js\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[Cn \u001b[2~au\u001b[2uthentication system built with node and passport js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazyD97/node-authentication-system.git"
+  },
+  "author": "crazyD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crazyD97/node-authentication-system/issues"
+  },
+  "homepage": "https://github.com/crazyD97/node-authentication-system#readme"
+}
