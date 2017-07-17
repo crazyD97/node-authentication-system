@@ -2,11 +2,24 @@
 //includes
 const express = require('express');
 const path = require('path');
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
-//const src = require('./src/src');
 var index = require('./routes/index');
+
+//setting up mongoDB
+mongoose.connect('mongodb://localhost/authSys');
+var db = mongoose.connection;
+
+//checking connection
+db.once('open',()=>{
+  console.log("connected to mongoDB");
+});
+
+//checking for db errors
+db.on('error',(err)=>{
+  console.log("error in connection " + err);
+});
 
 //express app
 var app = express();
@@ -15,7 +28,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 //pug template engine
 app.set('views',path.join(__dirname+'/views'));

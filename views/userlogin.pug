@@ -1,0 +1,15 @@
+extends layout.pug
+block content
+  div.login
+    h1= title
+    form(method="POST" action="/login")
+      div.form-group
+        label(for='email') Email:
+        br
+        input.form-control(type='email' id='email' placeholder='email' name='email')
+      div.form-group
+        label(for='password') Password:
+        br
+        input.form-control(type='password' id='password' placeholder='password' name='password')
+      div.form-group
+        button.btn.btn-primary(type='submit') Login

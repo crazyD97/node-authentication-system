@@ -1,0 +1,26 @@
+extends layout.pug
+block content
+  div.register
+    h1= title
+    //ul
+      each user, i in users
+        li= user.username
+    form(method="POST" action="/register")
+      div.form-group
+        label(for="username") Username
+        br
+        input.form-control(type="text" id="text" placeholder="username" name="username")
+      div.form-group
+        label(for='email') Email
+        br
+        input.form-control(type='email' id='email' placeholder='email' name='email')
+      div.form-group
+        label(for='password') Password
+        br
+        input.form-control(type='password' id='password' placeholder='password' name='password')
+      div.form-group
+        label(for='cpassword') Confirm Password
+        br
+        input.form-control(type='password' id='cpassword' placeholder='Re-enter Password' name='password')
+      div.form-group
+        button.btn.btn-primary(type='submit') Sign Up
