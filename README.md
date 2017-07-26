@@ -21,6 +21,7 @@ And In this project nodemon and webpack are used for live reloading on any chang
 install [mongoDB](https://www.mongodb.com/) and follow steps to setup Database on your system.
   1. Create a database named authSys
   1. Create Collection named user with unique index on username
+
 And your database is all set to Rock.
 
 #### Second:
@@ -38,6 +39,7 @@ Now you can go to localhost:3000 in your browser and whole app will be working.
 
 #### Third:
 To add your own flavour to this app, you need to know basics of all technologies mentioned above.
+
 In another Cmd run:
 ```javascript
 webpack -p
