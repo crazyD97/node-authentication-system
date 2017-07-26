@@ -2,10 +2,10 @@
 # node-authentication-system
 A authentication system build with node and passport js
 
-##Getting Started
+## Getting Started
 This project is made using node.js library, so first of all you need to install node from its official [source](https://nodejs.org/)
-###How to install
-#####Run commands:
+### How to install
+##### Run commands:
 To install all dependencies:
 ```javascript
 npm install
