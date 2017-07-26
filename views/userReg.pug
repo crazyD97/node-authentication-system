@@ -1,26 +1,26 @@
 extends layout.pug
+block head
+
 block content
   div.register
-    h1= title
-    //ul
-      each user, i in users
-        li= user.username
-    form(method="POST" action="/register")
+    != messages('message', locals)
+    h1 Register
+    form(method="POST" action="/users/register")
       div.form-group
         label(for="username") Username
         br
-        input.form-control(type="text" id="text" placeholder="username" name="username")
+        input.form-control(type="text" id="text" placeholder="username" name="username" oninvalid="this.setCustomValidity('name plz!')" oninput="setCustomValidity('')" required)
       div.form-group
         label(for='email') Email
         br
-        input.form-control(type='email' id='email' placeholder='email' name='email')
+        input.form-control(type='email' id='email' placeholder='email' name='email' oninvalid="this.setCustomValidity('email dude?')" oninput="setCustomValidity('')" required)
       div.form-group
         label(for='password') Password
         br
-        input.form-control(type='password' id='password' placeholder='password' name='password')
+        input.form-control(type='password' id='password' title="Password must contain at least 6 characters, including both UPPER/lowercase" placeholder='password' name='password' pattern='(?=.*[a-z])(?=.*[A-Z]).{6,}' onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : ''); if(this.checkValidity()) form.cpassword.pattern = this.value;" required)
       div.form-group
         label(for='cpassword') Confirm Password
         br
-        input.form-control(type='password' id='cpassword' placeholder='Re-enter Password' name='password')
+        input.form-control(type='password' id='cpassword' title="Enter same password as above" placeholder='Re-enter Password' name='cpassword' pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" onchange="this.setCustomValidity(this.validity.patternMismatch ? this.title : '');" required)
       div.form-group
-        button.btn.btn-primary(type='submit') Sign Up
+        button.btn.btn-primary(type='submit' id="submit") Sign Up

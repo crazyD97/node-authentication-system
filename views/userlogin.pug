@@ -1,15 +1,16 @@
 extends layout.pug
 block content
   div.login
+    != messages('message', locals)
     h1= title
-    form(method="POST" action="/login")
+    form(method="POST" action="/users/login")
       div.form-group
-        label(for='email') Email:
+        label(for='username') Username:
         br
-        input.form-control(type='email' id='email' placeholder='email' name='email')
+        input.form-control(type='text' id='username' placeholder='username' name='username' required)
       div.form-group
         label(for='password') Password:
         br
-        input.form-control(type='password' id='password' placeholder='password' name='password')
+        input.form-control(type='password' id='password' placeholder='password' name='password' required)
       div.form-group
         button.btn.btn-primary(type='submit') Login

@@ -1,14 +1,22 @@
 //☕
-//includes
+//includes modules
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
+const passport = require('passport');
+const flash = require('connect-flash');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+//router from routes folder
 var index = require('./routes/index');
+var users = require('./routes/users');
+//config files
+const dbconfig = require('./config/dbconfig');
 
 //setting up mongoDB
-mongoose.connect('mongodb://localhost/authSys');
+mongoose.connect(dbconfig.db);
 var db = mongoose.connection;
 
 //checking connection
@@ -23,6 +31,19 @@ db.on('error',(err)=>{
 
 //express app
 var app = express();
+
+app.use(cookieParser());
+app.set('trust proxy', 1); // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(require('connect-flash')());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
 
 //bodyParser for urls
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -55,8 +76,20 @@ app.use(expressValidator({
   }
 }));
 
+//passport configration
+require('./config/passport.conf')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
+//setting global varibale for user id logged in
+app.get('*',(req, res, next)=>{
+  res.locals.user = req.user || null;
+  next();
+})
+
 //routes
 app.use('/',index);
+app.use('/users',users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

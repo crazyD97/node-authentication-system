@@ -2,8 +2,24 @@ html
   head
     meta(charset="utf-8")
     title= title
+    block head
   body
+    div.layout
+      h2
+        span
+          img(src="/images/lock.png" alt="->" style="height:25px; width:25px; margin-right:10px;")
+        span
+          a(href="/") AuthSys
+      nav.site_nav
+        ul.nav_ul
+          if user
+            li.nav_items
+              a(href="/users/logout") Logout
+          else
+            li.nav_items
+              a(href="/users/login") Login
+            li.nav_items
+              a(href="/users/register") Register
     block content
-      div.container
 
     script(type="text/javascript" src="/js/bundle.js")

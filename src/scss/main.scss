@@ -1,0 +1,45 @@
+body{
+  margin: 0 auto;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+li{
+  list-style-type: none;
+}
+.btn{
+  line-height: 18px;
+  font-family: 'lato', sans-serif;
+  border: none;
+  padding: 10px;
+}
+.btn-primary{
+  background-color: rgb(8, 170, 68);
+}
+.success{
+  background-color: rgba(103, 230, 83, 0.79);
+  border-radius: 3px;
+  border: 1px solid green;
+  padding: 10px 10px;
+  max-width: 300px;
+  width: auto;
+  margin-top: 50px;
+}
+.fail{
+  background-color: rgba(255, 122, 108, 1);
+  border-radius: 3px;
+  border: 1px solid red;
+  padding: 10px 10px;
+  max-width: 300px;
+  width: auto;
+  margin-top: 50px;
+}
+
+//specific pages
+@import "layout.scss";
+@import "index.scss";
+@import "register.scss";
+@import "login.scss";
