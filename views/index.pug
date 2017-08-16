@@ -1,4 +1,10 @@
 extends layout.pug
 block content
   div.index
-    h1 Articles
+    != messages('message', locals)
+    h1= title
+    ul.articles
+      each article, i in articles
+        li.article
+          a(href="/articles/"+article._id)= article.title
+            span -#{article.author}

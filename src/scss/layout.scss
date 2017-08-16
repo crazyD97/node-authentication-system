@@ -17,6 +17,14 @@
       color: white;
     }
   }
+  .addArticle{
+    a{
+      color: #aaa;
+      &:hover{
+        color: white;
+      }
+    }
+  }
   .site_nav{
     margin-right: 80px;
     overflow: hidden;

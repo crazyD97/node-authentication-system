@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser');
 //router from routes folder
 var index = require('./routes/index');
 var users = require('./routes/users');
+var articles = require('./routes/articles');
 //config files
 const dbconfig = require('./config/dbconfig');
 
@@ -32,6 +33,7 @@ db.on('error',(err)=>{
 //express app
 var app = express();
 
+//connectiong flash messages
 app.use(cookieParser());
 app.set('trust proxy', 1); // trust first proxy
 app.use(session({
@@ -90,6 +92,7 @@ app.get('*',(req, res, next)=>{
 //routes
 app.use('/',index);
 app.use('/users',users);
+app.use('/articles',articles);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

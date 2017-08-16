@@ -1,0 +1,19 @@
+extends layout.pug
+block content
+  div.addArticle
+    h1 Add Article
+    form(method="POST" action="/articles/add")
+      div.form-group
+        label(for="title") Title
+        br
+        input.form-control(type="text" id="title" placeholder="Title" name="title" oninvalid="this.setCustomValidity('Title plz!')" oninput="setCustomValidity('')" required)
+      div.form-group
+        label(for='body') Contents
+        br
+        textarea(id='body' name='body' placeholder="Write here..." required)
+      div.form-group
+        label(for='author') Author
+        br
+        input.form-control(type='text' id='author' placeholder="Author" name="author" oninvalid="this.setCustomValidity('We dont support anonymous author XD')" oninput="setCustomValidity('')" required)
+      div.form-group
+        button.btn.btn-primary(type='submit' id="submit") Submit Article

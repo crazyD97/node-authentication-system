@@ -1,3 +1,30 @@
 .index{
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  .articles{
+    width: 100%;
+    .article{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      a{
+        color: #444;
+        display: block;
+        width: 40%;
+        padding: 10px 10px;
+        background-color: rgb(226, 226, 226);
+        border-radius: 5px;
+        border: 1px solid #444;
+        margin: 10px 0px;
+        span{
+          float: right;
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }

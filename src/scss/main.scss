@@ -1,7 +1,6 @@
 body{
   margin: 0 auto;
   letter-spacing: 2px;
-  overflow: hidden;
 }
 a{
   text-decoration: none;
@@ -43,3 +42,4 @@ li{
 @import "index.scss";
 @import "register.scss";
 @import "login.scss";
+@import "addArticle.scss"

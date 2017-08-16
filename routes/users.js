@@ -3,22 +3,6 @@ var router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
-//const dbconfig = require('../config/dbconfig.js');
-//const mongoose = require('mongoose');
-//setting up mongoDB
-//mongoose.connect(dbconfig.db);
-//var db = mongoose.connection;
-
-//checking connection
-//db.once('open',()=>{
-//
-//});
-
-//checking for db errors
-//db.on('error',(err)=>{
-//  console.log("error in connection " + err);
-//});
-
 //getting our user model here
 var User = require('../models/user');
 
